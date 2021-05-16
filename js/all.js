@@ -189,11 +189,11 @@
             
             if ($(window).scrollTop() > 10) {
                 $(".js-transparent").removeClass("transparent");
-                $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").addClass("small-height");
+                $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").addClass("small-height").addClass('bg-gray-lighter');
             }
             else {
                 $(".js-transparent").addClass("transparent");
-                $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").removeClass("small-height");
+                $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").removeClass("small-height").removeClass('bg-gray-lighter');
             }
             
             
