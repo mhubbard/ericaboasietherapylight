@@ -193,7 +193,7 @@
             }
             else {
                 $(".js-transparent").addClass("transparent");
-                $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").removeClass("small-height").removeClass('bg-gray-lighter');
+                $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").removeClass("small-height").removeClass('bg-gray-lighterF');
             }
             
             
@@ -587,11 +587,7 @@
             
             return false;
         });
-        
-        // Responsive video
-        $(".video, .resp-media, .blog-media").fitVids();
-        $(".work-full-media").fitVids(); 
-               
+
     }
     
     
