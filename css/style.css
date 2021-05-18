@@ -1644,11 +1644,6 @@ a.logo:hover{
 .inner-nav ul > li:first-child > a{
 
 }
-.inner-nav ul li a:hover,
-.inner-nav ul li a.active{
-    color: #FFF;
-    text-decoration: none;
-}
 
 
 
