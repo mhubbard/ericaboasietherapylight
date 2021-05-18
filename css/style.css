@@ -1592,7 +1592,7 @@ a.logo:hover{
 .small-height .inner-nav ul li a{
     height: 55px !important;
     line-height: 55px !important;
-    color: rgba(17, 17, 17, 1) !important;
+    color: rgba(17, 17, 17, 1);
 }
 .small-height .logo {
     height: 55px !important;
@@ -1601,6 +1601,9 @@ a.logo:hover{
 }
 .main-nav.small-height {
     color: rgba(17, 17, 17, 1);
+}
+.mobile-on.small-height .inner-nav ul li a{
+    color: rgba(255, 255, 255, 1);
 }
 
 .inner-nav{
@@ -1936,8 +1939,14 @@ a.logo:hover{
     width: 55px;
     height: 55px;
 }
-.mobile-on .mobile-nav{
+.mobile-on .mobile-nav {
     display: table;
+}
+.mobile-on .fa {
+    color: white;
+}
+.mobile-on.small-height .fa {
+    color: black;
 }
 .mobile-nav .fa{
     height: 100%;
