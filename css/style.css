@@ -1599,7 +1599,7 @@ a.logo:hover{
     line-height: 55px !important;
     color: rgba(17, 17, 17, 1);
 }
-.small-height.main-nav {
+.main-nav.small-height {
     color: rgba(17, 17, 17, 1);
 }
 

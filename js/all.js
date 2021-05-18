@@ -54,7 +54,6 @@
         init_side_panel_resize()
         js_height_init();
         split_height_init();
-        
     });
     
     
@@ -193,7 +192,7 @@
             }
             else {
                 $(".js-transparent").addClass("transparent");
-                $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").removeClass("small-height").removeClass('bg-gray-lighterF');
+                $(".main-nav, .nav-logo-wrap .logo, .mobile-nav").removeClass("small-height").removeClass('bg-gray-lighter');
             }
             
             
@@ -212,11 +211,7 @@
                 desktop_nav.slideDown("slow", "easeOutQuart").addClass("js-opened");
                 $(this).addClass("active");
                 $(this).attr("aria-expanded", "true");
-                // Fix for responsive menu
-                if ($(".main-nav").hasClass("not-top")){
-                    $(window).scrollTo(".main-nav", "slow"); 
-                }                
-            }   
+            }
                      
         });
         
