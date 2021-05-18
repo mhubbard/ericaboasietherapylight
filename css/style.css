@@ -1925,7 +1925,6 @@ a.logo:hover{
     -o-transition-property: background, color, height, line-height;
     transition-property:  background, color, height, line-height;
 }
-.mobile-nav:hover,
 .mobile-nav.active{
     background: #fff;
     color: #777;
@@ -1942,11 +1941,14 @@ a.logo:hover{
 .mobile-on .mobile-nav {
     display: table;
 }
-.mobile-on .fa {
+.mobile-nav:not(.active) .fa {
     color: white;
 }
+.mobile-nav.active .fa {
+    color: rgba(17, 17, 17, 1);
+}
 .mobile-on.small-height .fa {
-    color: black;
+    color: rgba(17, 17, 17, 1);
 }
 .mobile-nav .fa{
     height: 100%;
