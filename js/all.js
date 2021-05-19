@@ -41,8 +41,6 @@
         init_parallax();
         init_shortcodes();
         init_tooltips();
-        init_counters();
-        init_team();
         init_map();
         init_wow();
         init_masonry();
@@ -601,52 +599,7 @@
         });
         
     }
-    
-    
-    
-    /* ---------------------------------------------
-     Some facts section
-     --------------------------------------------- */
-    
-     function init_counters(){
-        $(".count-number").appear(function(){
-            var count = $(this);
-            count.countTo({
-                from: 0,
-                to: count.html(),
-                speed: 1300,
-                refreshInterval: 60,
-            });
-            
-        });
-    }
-    
-    
-    
-    
-    /* ---------------------------------------------
-     Team
-     --------------------------------------------- */   
-     
-    function init_team(){
-    
-        // Hover        
-        $(".team-item").click(function(){
-            if ($("html").hasClass("mobile")) {
-                $(this).toggleClass("js-active");
-            }
-        });
-        
-        // Keayboar navigation for team section        
-        $(".team-social-links > a").on("focus blur", function(){
-             if (!($("html").hasClass("mobile"))) {
-                 $(this).parent().parent().parent().parent().toggleClass("js-active");
-             }       
-        });
-        
-    }
-    
-    
+
 })(jQuery); // End of use strict
 
 
