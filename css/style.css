@@ -248,6 +248,11 @@ img:not([draggable]), embed, object, video{
     height: auto;
 }
 
+.icon-button {
+    border: 3px solid rgba(105, 137, 152, 1);
+    border-radius: 100%;
+}
+
 
 
 /* ==============================

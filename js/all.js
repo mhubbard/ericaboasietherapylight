@@ -40,9 +40,7 @@
         init_parallax();
         init_shortcodes();
         init_tooltips();
-        init_map();
         init_wow();
-        init_masonry();
     });
     
     $(window).resize(function(){        
@@ -821,84 +819,6 @@
     }
 
 /* ---------------------------------------------
- Portfolio section
- --------------------------------------------- */
-
-// Projects filtering
-var fselector = 0;
-var work_grid = $("#work-grid, #isotope");
-
-function initWorkFilter(){
-    (function($){
-     "use strict";
-     var isotope_mode;
-     if (work_grid.hasClass("masonry")){
-         isotope_mode = "masonry";
-     } else{
-         isotope_mode = "fitRows"
-     }
-     
-     $(".filter").click(function(){
-         $(".filter").removeClass("active").attr("aria-selected", "false");
-         $(this).addClass("active").attr("aria-selected", "true");
-         fselector = $(this).attr('data-filter');
-
-         work_grid.imagesLoaded(function(){
-             work_grid.isotope({
-                 itemSelector: '.mix',
-                 layoutMode: isotope_mode,
-                 filter: fselector
-             });
-         });
-         return false;
-     });
-        
-     if (window.location.hash) {
-         $(".filter").each(function(){
-             if ($(this).attr("data-filter") == "." + window.location.hash.replace("#", "")) {
-                 $(this).trigger('click');
-                 
-                 $("html, body").animate({
-                     scrollTop: $("#portfolio").offset().top
-                 });
-                 
-             }
-         });
-     }
-
-     work_grid.imagesLoaded(function(){
-         work_grid.isotope({
-             itemSelector: '.mix',
-             layoutMode: isotope_mode,
-             filter: fselector
-         });
-     });
-     
-     // Lazy loading plus isotope filter
-     $(".img-lazy-work").on("load", function(){
-         masonry_update();
-     });     
-     function masonry_update(){
-         work_grid.imagesLoaded(function(){
-             work_grid.isotope({
-                 itemSelector: '.mix',
-                 layoutMode: isotope_mode,
-                 filter: fselector
-             });
-         });
-     }
-     work_grid.on("arrangeComplete", function(){
-         $(window).trigger("scroll");
-     });
-    
-    })(jQuery);
-}
-
-
-
-
-
-/* ---------------------------------------------
  Height 100%
  --------------------------------------------- */
 function js_height_init(){
@@ -909,29 +829,6 @@ function js_height_init(){
         });
     })(jQuery);
 }
-
-
-
-
-/* ---------------------------------------------
- Google map
- --------------------------------------------- */
-
-var gmMapDiv = $("#map-canvas");
-
-function init_map(){
-    (function($){
-        
-        $(".map-section").click(function(){
-            $(this).toggleClass("js-active");
-            $(this).find(".mt-open").toggle();
-            $(this).find(".mt-close").toggle();
-            return false;
-        });
-
-    })(jQuery);
-}
-
 
 
 
@@ -955,21 +852,6 @@ function init_wow(){
         } else{
             $(".wow").css("opacity", "1");
         }
-        
-    })(jQuery);
-}
-
-
-/* ---------------------------------------------
- Masonry
- --------------------------------------------- */
-
-function init_masonry(){
-    (function($){    
-    
-        $(".masonry").imagesLoaded(function(){
-            $(".masonry").masonry();
-        });
         
     })(jQuery);
 }
