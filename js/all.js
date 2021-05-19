@@ -43,7 +43,6 @@
         init_tooltips();
         init_counters();
         init_team();
-        initPageSliders();
         init_map();
         init_wow();
         init_masonry();
@@ -652,341 +651,6 @@
 
 
 /* ---------------------------------------------
- Sliders
- --------------------------------------------- */
-function initPageSliders(){
-    (function($){
-        "use strict";
-        
-        function owl_keynav(el){            
-            el.find(".owl-prev, .owl-next").attr({
-                "role": "button",
-                "tabindex": "0"
-            });
-            el.prepend(el.find(".owl-controls"));     
-            el.on("click", ".owl-page, .owl-prev, .owl-next", function(e){
-                var this_owl = el.data("owlCarousel");
-                this_owl.stop();
-            });            
-            el.on("keydown", ".owl-prev", function(e){
-                if (e.keyCode == 13 || e.keyCode == 32) {
-                    var this_owl = el.data("owlCarousel");
-                    this_owl.prev();
-                    return false;                    
-                }
-            });
-            el.on("keydown", ".owl-next", function(e){
-                if (e.keyCode == 13 || e.keyCode == 32) {
-                    var this_owl = el.data("owlCarousel");
-                    this_owl.next();
-                    return false;                   
-                }
-            });
-        }
-        
-        function owl_update(el){       
-            el.find(".owl-item").attr({
-                "aria-hidden": "true"
-            });
-            el.find(".owl-item.active").attr({
-                "aria-hidden": "false"
-            });
-            el.find(".owl-item a, .owl-item button, .owl-item input").attr({
-                "tabindex": "-1"
-            });
-            el.find(".owl-item.active a, .owl-item.active button, .owl-item.active input").attr({
-                "tabindex": "0"
-            });
-        }
-        
-        // Fullwidth slider
-        $(".fullwidth-slider").owlCarousel({
-            slideSpeed: 350,
-            singleItem: true,
-            autoHeight: true,
-            navigation: true,
-            lazyLoad: true,
-            addClassActive : true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        });
-        
-        // Fullwidth slider fade
-        $(".fullwidth-slider-fade").owlCarousel({
-            transitionStyle: "fadeUp",
-            slideSpeed: 350,
-            singleItem: true,
-            autoHeight: true,
-            navigation: true,
-            lazyLoad: true,
-            addClassActive : true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        });
-        
-        // Fullwidth gallery
-        $(".fullwidth-gallery").owlCarousel({
-            transitionStyle: "fade",
-            autoPlay: 5000,
-            slideSpeed: 700,
-            singleItem: true,
-            autoHeight: true,
-            navigation: false,
-            pagination: false,
-            lazyLoad: true,
-            addClassActive : true,
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        });
-        
-        // Item carousel
-        $(".item-carousel").owlCarousel({
-            autoPlay: 2500,
-            stopOnHover: false,
-            items: 3,
-            itemsDesktop: [1199, 3],
-            itemsTabletSmall: [768, 3],
-            itemsMobile: [480, 1],
-            navigation: true,
-            lazyLoad: true,
-            addClassActive : true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        });
-        
-        // Small item carousel
-        $(".small-item-carousel").owlCarousel({
-            autoPlay: 2500,
-            stopOnHover: true,
-            items: 6,
-            itemsDesktop: [1199, 4],
-            itemsTabletSmall: [768, 3],
-            itemsMobile: [480, 2],
-            pagination: false,
-            navigation: true,
-            lazyLoad: true,
-            addClassActive : true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        });
-        
-        // Single carousel
-        $(".single-carousel").owlCarousel({
-            singleItem: true,
-            autoHeight: true,
-            navigation: true,
-            lazyLoad: true,
-            addClassActive : true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        });
-        
-        // Content Slider
-        $(".content-slider").owlCarousel({
-            slideSpeed: 350,
-            singleItem: true,
-            autoHeight: true,
-            navigation: true,
-            lazyLoad: true,
-            addClassActive : true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        });
-
-        // Photo slider
-        $(".photo-slider").owlCarousel({
-            slideSpeed: 350,
-            items: 4,
-            itemsDesktop: [1199, 4],
-            itemsTabletSmall: [768, 2],
-            itemsMobile: [480, 1],
-            autoHeight: true,
-            navigation: true,
-            lazyLoad: true,
-            addClassActive : true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        }); 
-        
-        // Work slider
-        $(".work-full-slider").owlCarousel({
-            slideSpeed : 350,
-            singleItem: true,
-            autoHeight: true,
-            navigation: true,
-            lazyLoad: true,
-            addClassActive : true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        });
-        
-        // Blog posts carousel
-        $(".blog-posts-carousel").owlCarousel({
-            autoPlay: 5000,
-            stopOnHover: true,
-            items: 3,
-            itemsDesktop: [1199, 3],
-            itemsTabletSmall: [768, 2],
-            itemsMobile: [480, 1],
-            pagination: false,
-            navigation: true,
-            lazyLoad: true,
-            addClassActive : true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        });
-        
-        // Blog posts carousel alt
-        $(".blog-posts-carousel-alt").owlCarousel({
-            autoPlay: 3500,
-            stopOnHover: true,
-            slideSpeed: 350,
-            singleItem: true,
-            autoHeight: true,
-            pagination: false,
-            navigation: true,
-            lazyLoad: true,
-            addClassActive : true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        });
-        
-        // Image carousel
-        $(".image-carousel").owlCarousel({
-            autoPlay: 5000,
-            stopOnHover: true,
-            items: 4,
-            itemsDesktop: [1199, 3],
-            itemsTabletSmall: [768, 2],
-            itemsMobile: [480, 1],
-            navigation: true,
-            lazyLoad: true,
-            addClassActive : true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterInit: owl_keynav,
-            afterAction: owl_update
-        });
-        
-        // Fullwidth slideshow
-        
-          var sync1 = $(".fullwidth-slideshow");
-          var sync2 = $(".fullwidth-slideshow-pager");
-  
-        $(".fullwidth-slideshow").owlCarousel({
-            autoPlay: 5000,
-            stopOnHover: true,
-            transitionStyle: "fade",
-            slideSpeed: 350,
-            singleItem: true,
-            autoHeight: true,
-            addClassActive : true,
-            pagination: false,
-            navigation: true,
-            navigationText: ["<span class='sr-only'>Previous Slide</span><i class='fa fa-angle-left' aria-hidden='true'></i>", "<span class='sr-only'>Next Slide</span><i class='fa fa-angle-right' aria-hidden='true'></i>"],
-            afterAction : syncPosition,
-            responsiveRefreshRate : 200
-        });
-        $(".fullwidth-slideshow-pager").owlCarousel({
-            autoPlay: 5000,
-            stopOnHover: true,
-            items: 8,
-            itemsDesktop: [1199,8],
-            itemsDesktopSmall: [979,7],
-            itemsTablet: [768,6],
-            itemsMobile: [480,4],
-            autoHeight: true,
-            pagination: false,
-            navigation: false,
-            responsiveRefreshRate : 100,
-            afterInit : function(el){
-              el.find(".owl-item").eq(0).addClass("synced");
-              el.find(".owl-item").attr({
-                  "role": "button",
-                  "tabindex": "0"
-              });
-              $(".fullwidth-slideshow").each(function(){
-                  var owl = $(this).data('owlCarousel');
-                  $(".fullwidth-slideshow-pager").find(".owl-item").keydown(function(e){
-                      if (event.key === "Enter") {
-                          owl.goTo($(this).index());
-                      }
-                  });
-              });
-            }
-        });
-        
-        function syncPosition(el){
-            var current = this.currentItem;
-            $(".fullwidth-slideshow-pager").find(".owl-item").removeClass("synced").eq(current).addClass("synced")
-            if ($(".fullwidth-slideshow-pager").data("owlCarousel") !== undefined) {
-                center(current)
-            }
-        }
-        
-        $(".fullwidth-slideshow-pager").on("click", ".owl-item", function(e){
-            e.preventDefault();
-            var number = $(this).data("owlItem");
-            sync1.trigger("owl.goTo", number);
-        });
- 
-        function center(number){
-            var sync2visible = sync2.data("owlCarousel").owl.visibleItems;
-            var num = number;
-            var found = false;
-            for (var i in sync2visible) {
-                if (num === sync2visible[i]) {
-                    var found = true;
-                }
-            }
-            if (found === false) {
-                if (num > sync2visible[sync2visible.length - 1]) {
-                    sync2.trigger("owl.goTo", num - sync2visible.length + 2)
-                }
-                else {
-                    if (num - 1 === -1) {
-                        num = 0;
-                    }
-                    sync2.trigger("owl.goTo", num);
-                }
-            }
-            else 
-                if (num === sync2visible[sync2visible.length - 1]) {
-                    sync2.trigger("owl.goTo", sync2visible[1])
-                }
-                else 
-                    if (num === sync2visible[0]) {
-                        sync2.trigger("owl.goTo", num - 1)
-                    }
-        }
-          
-        var owl = $(".fullwidth-slideshow").data("owlCarousel");
-        
-        $(document.documentElement).keyup(function(event){
-            // handle cursor keys
-            if (event.keyCode == 37) {
-                owl.prev();
-            }
-            else 
-                if (event.keyCode == 39) {
-                    owl.next();
-                }
-        });
-
-    })(jQuery);
-};
-
-
-/* ---------------------------------------------
      Fullscreen menu
    --------------------------------------------- */
     
@@ -1024,15 +688,8 @@ function initPageSliders(){
                         });
                     });
                     
-                    if ($(".owl-carousel").lenth) {
-                        $(".owl-carousel").data("owlCarousel").play();
-                    }
-                    
                 }
                 else {
-                    if ($(".owl-carousel").lenth) {
-                        $(".owl-carousel").data("owlCarousel").stop();
-                    }
                     $(this).addClass("active").attr("aria-expanded", "true").css("z-index", "2001").addClass("animation-process");
                     
                     fm_menu_wrap.fadeIn(function(){
@@ -1064,10 +721,6 @@ function initPageSliders(){
                         });
                     });
                     
-                    if ($(".owl-carousel").lenth) {
-                        $(".owl-carousel").data("owlCarousel").play();
-                    }
-                    
                     return false;
                     
                 }
@@ -1090,10 +743,6 @@ function initPageSliders(){
                         
                     });
                 });
-                
-                if ($(".owl-carousel").lenth) {
-                    $(".owl-carousel").data("owlCarousel").play();
-                }
             }
         });
         
@@ -1153,11 +802,7 @@ function initPageSliders(){
             left: -270
         }, 500, "easeOutExpo");
         sp_overlay.fadeOut();
-        
-        
-        if ($(".owl-carousel").lenth) {
-            $(".owl-carousel").data("owlCarousel").play();
-        }
+
     }
     
     function init_side_panel(){
@@ -1174,10 +819,6 @@ function initPageSliders(){
                 setTimeout(function(){
                     sp_overlay.fadeIn();
                 }, 100);
-                
-                if ($(".owl-carousel").lenth) {
-                    $(".owl-carousel").data("owlCarousel").stop();
-                }
                 
                 return false;
             
