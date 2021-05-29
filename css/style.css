@@ -1506,6 +1506,10 @@ a.logo:hover{
     color: rgba(255,255,255, .9);
 }
 
+.nav-background-floral .logo,
+a.logo:hover{
+    color: rgba(17,17,17, .9);
+}
 /*
  * Desktop nav
  */
@@ -1517,7 +1521,6 @@ a.logo:hover{
     top: 0;
     left: 0;
     text-align: left;
-    background-color:rgba(105, 137, 152, 0.3);
 
     -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.05);
     -moz-box-shadow: 0 1px 0 rgba(0,0,0,.05);
@@ -1532,6 +1535,13 @@ a.logo:hover{
     transition: height 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
 
+.nav-background-water {
+    background-color: rgba(105, 137, 152, 0.3);
+}
+
+.nav-background-floral {
+    background-color: rgba(206, 214, 222, 0.5);
+}
 
 .small-height{
     height: 55px !important;
@@ -1591,7 +1601,9 @@ a.logo:hover{
 .inner-nav ul > li:first-child > a{
 
 }
-
+.nav-background-floral .inner-nav ul li a {
+    color: rgba(17, 17, 17, .9);
+}
 
 
 /* Menu sub */
