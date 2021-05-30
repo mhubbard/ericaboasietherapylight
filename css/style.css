@@ -134,6 +134,11 @@ Section Text:       15px/1.7 "Open Sans", arial, sans-serif;
     -moz-box-shadow: 0px 3px 50px rgba(0, 0, 0, .15);
     box-shadow: 0px 3px 50px rgba(0, 0, 0, .15);
 }
+.shadow-darker {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .white-shadow{
     -webkit-box-shadow: 0px 0px 200px rgba(255, 255, 255, .2);
     -moz-box-shadow: 0px 0px 200px rgba(255, 255, 255, .2);
