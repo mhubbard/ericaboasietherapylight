@@ -3595,6 +3595,7 @@ a.blog-item-more:hover{
     text-decoration: none;
     padding: 14px 20px;
     border: 1px solid #e5e5e5;
+    font-size: 14px;
 
 
     -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
@@ -3614,6 +3615,7 @@ a.blog-item-more:hover{
     border-color: #ddd;
     background-color: #fcfcfc;
     cursor: default;
+    font-weight: bold;
 }
 .accordion > dt > a:after{
     content: "\f107";
