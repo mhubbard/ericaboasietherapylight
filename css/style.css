@@ -1129,8 +1129,8 @@ a.btn-mod:focus{
 .scroll-down:before{
     display: block;
     content: "";
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin: 0 0 0 -10px;
     position: absolute;
     bottom: 0;
@@ -1162,14 +1162,13 @@ a.btn-mod:focus{
 
 .scroll-down-icon{
     display: block;
-    width: 10px;
-    height: 10px;
-    margin-left: -5px;
+    width: 15px;
+    height: 15px;
+    margin-left: -3px;
     position: absolute;
     left: 50%;
-    bottom: 4px;
     color: #111;
-    font-size: 15px;
+    font-size: 20px;
 
     -webkit-animation: scroll-down-anim 1s infinite;
     -moz-animation: scroll-down-anim 1s infinite;
