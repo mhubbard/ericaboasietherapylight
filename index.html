@@ -328,6 +328,7 @@ You can find the code of your language here - https://www.w3schools.com/tags/ref
                 aboutMeWaypointCount++;
                 if (aboutMeWaypointCount === 1) {
                     gtag('event', 'about_me_viewed');
+                    setTimeout(function(){ gtag('event', 'about_me_viewed_15_sec'); }, 15000);
                 }
             }, {
                 offset: '50%'
